@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0046)file:///Users/305partners/Downloads/index.html -->
+<!-- saved from url=(0048)file:///Users/305partners/Downloads/index_1.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
   <link rel="icon" type="image/x-icon" href="file:///Users/305partners/Downloads/favicon.ico">
   <link rel="icon" type="image/svg+xml" href="file:///Users/305partners/Downloads/favicon.svg">
   <link rel="apple-touch-icon" href="file:///Users/305partners/Downloads/favicon-192.png">
-  <link href="./Miami Metro — Growth Without Limits_files/css2" rel="stylesheet">
+  <link href="./index_files/css2" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -677,13 +677,13 @@
 
   <!-- NAV -->
   <nav>
-    <a href="file:///Users/305partners/Downloads/index.html#" class="nav-logo">Miami<span>Metro</span></a>
+    <a href="file:///Users/305partners/Downloads/index_1.html#" class="nav-logo">Miami<span>Metro</span></a>
     <ul class="nav-links">
-      <li><a href="file:///Users/305partners/Downloads/index.html#services">Services</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index.html#why">Why Us</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index.html#careers">Careers</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index.html#contact">Contact</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index.html#careers" class="nav-cta">Apply Now</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_1.html#services">Services</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_1.html#why">Why Us</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_1.html#careers">Careers</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_1.html#contact">Contact</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_1.html#careers" class="nav-cta">Apply Now</a></li>
     </ul>
   </nav>
 
@@ -694,8 +694,8 @@
       <h1 class="hero-title">Growth<br>Without<br><em>Limits.</em></h1>
       <p class="hero-sub">We build field sales teams and deploy AI-powered marketing across telecommunications and digital channels — driving real revenue, in person and online.</p>
       <div class="hero-actions">
-        <a href="file:///Users/305partners/Downloads/index.html#services" class="btn-primary">Our Services →</a>
-        <a href="file:///Users/305partners/Downloads/index.html#careers" class="btn-outline">Join the Team</a>
+        <a href="file:///Users/305partners/Downloads/index_1.html#services" class="btn-primary">Our Services →</a>
+        <a href="file:///Users/305partners/Downloads/index_1.html#careers" class="btn-outline">Join the Team</a>
       </div>
     </div>
     <div class="hero-right">
@@ -938,23 +938,31 @@
     <div class="footer-logo">Miami<span>Metro</span> LLC</div>
     <p class="footer-copy">© 2025 Miami Metro LLC. All rights reserved.</p>
     <ul class="footer-links">
-      <li><a href="file:///Users/305partners/Downloads/index.html#services">Services</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index.html#careers">Careers</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index.html#contact">Contact</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_1.html#services">Services</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_1.html#careers">Careers</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_1.html#contact">Contact</a></li>
     </ul>
   </footer>
 
   <script data-cfasync="false" src="file:///cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
+
+    // Fallback: make everything visible after 300ms in case observer doesn't fire
+    setTimeout(() => {
+      reveals.forEach(el => el.classList.add('visible'));
+    }, 300);
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+      reveals.forEach(el => observer.observe(el));
+    }
 
     function submitApplication() {
       const fname = document.getElementById('fname').value;
