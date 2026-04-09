@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miami Metro LLC — Growth Without Limits</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --off-white: #f7f7f5;
+      --light-gray: #ebebeb;
+      --mid-gray: #9a9a9a;
+      --dark-gray: #3a3a3a;
+      --black: #111111;
+      --electric: #0057ff;
+      --electric-soft: #e8efff;
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 4rem;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--electric); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--dark-gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--electric); }
+
+    .nav-cta {
+      background: var(--black);
+      color: var(--white) !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 2px;
+      transition: background 0.25s !important;
+    }
+
+    .nav-cta:hover { background: var(--electric) !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 4rem;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--electric);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.2s forwards;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      color: var(--black);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.4s forwards;
+    }
+
+    .hero-title em { font-style: normal; color: var(--electric); }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--dark-gray);
+      max-width: 420px;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.6s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.8s forwards;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      border: 2px solid var(--black);
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary:hover { background: var(--electric); border-color: var(--electric); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      background: transparent;
+      color: var(--black);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      border: 2px solid var(--black);
+      transition: all 0.25s ease;
+    }
+
+    .btn-outline:hover { background: var(--black); color: var(--white); }
+
+    .hero-right {
+      background: var(--off-white);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-graphic { position: relative; width: 340px; height: 340px; }
+
+    .hero-circle {
+      position: absolute;
+      border-radius: 50%;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    .hc1 { width: 340px; height: 340px; background: var(--electric-soft); top: 0; left: 0; animation-delay: 0s; }
+    .hc2 { width: 240px; height: 240px; background: rgba(0,87,255,0.12); top: 50px; left: 50px; animation-delay: 0.5s; }
+    .hc3 { width: 140px; height: 140px; background: var(--electric); top: 100px; left: 100px; animation-delay: 1s; }
+
+    .hero-stat-cards {
+      position: absolute;
+      bottom: 3rem;
+      right: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .stat-card {
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: 4px;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      opacity: 0;
+      animation: slideLeft 0.6s ease forwards;
+    }
+
+    .stat-card:nth-child(1) { animation-delay: 1s; }
+    .stat-card:nth-child(2) { animation-delay: 1.2s; }
+    .stat-card:nth-child(3) { animation-delay: 1.4s; }
+
+    .stat-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--electric); flex-shrink: 0; }
+    .stat-label { font-size: 0.78rem; font-weight: 500; color: var(--dark-gray); }
+    .stat-val { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--black); margin-left: auto; padding-left: 1rem; }
+
+    /* TICKER */
+    .ticker {
+      background: var(--black);
+      color: var(--white);
+      padding: 0.9rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-inner {
+      display: inline-flex;
+      gap: 3rem;
+      animation: ticker 20s linear infinite;
+    }
+
+    .ticker-item {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .ticker-sep { color: var(--electric); }
+
+    /* SECTIONS */
+    .section { padding: 7rem 4rem; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--electric);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--black);
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--dark-gray);
+      max-width: 500px;
+      margin-bottom: 4rem;
+    }
+
+    /* SERVICES — 2x2 grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--light-gray);
+      border: 1px solid var(--light-gray);
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 2.5rem;
+      transition: background 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 3px; width: 0;
+      background: var(--electric);
+      transition: width 0.4s ease;
+    }
+
+    .service-card:hover { background: var(--off-white); }
+    .service-card:hover::after { width: 100%; }
+
+    .service-icon {
+      width: 44px; height: 44px;
+      background: var(--electric-soft);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      color: var(--black);
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.65;
+      color: var(--mid-gray);
+    }
+
+    /* WHY US */
+    .why-section {
+      background: var(--black);
+      color: var(--white);
+      padding: 7rem 4rem;
+    }
+
+    .why-section .section-label { color: var(--electric); }
+    .why-section .section-title { color: var(--white); max-width: 700px; }
+    .why-section .section-sub { color: rgba(255,255,255,0.5); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .why-item {
+      padding: 2rem 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .why-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--electric);
+      letter-spacing: -0.04em;
+      margin-bottom: 0.5rem;
+    }
+
+    .why-label {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .why-desc {
+      font-size: 0.85rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* CAREERS */
+    .careers-section {
+      padding: 7rem 4rem;
+      background: var(--off-white);
+    }
+
+    .careers-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .perks-list {
+      list-style: none;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .perks-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+      color: var(--dark-gray);
+      line-height: 1.5;
+    }
+
+    .perk-icon { color: var(--electric); flex-shrink: 0; margin-top: 0.1rem; }
+
+    /* FORM */
+    .apply-form {
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: 4px;
+      padding: 2.5rem;
+    }
+
+    .form-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-sub {
+      font-size: 0.88rem;
+      color: var(--mid-gray);
+      margin-bottom: 2rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dark-gray);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--black);
+      background: var(--off-white);
+      border: 1px solid var(--light-gray);
+      border-radius: 2px;
+      padding: 0.75rem 1rem;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--electric);
+      background: var(--white);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 1rem;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.25s;
+      margin-top: 0.5rem;
+    }
+
+    .form-submit:hover { background: var(--electric); }
+
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--mid-gray);
+      text-align: center;
+      margin-top: 0.75rem;
+    }
+
+    .success-msg {
+      display: none;
+      background: #e8f5e9;
+      border: 1px solid #a5d6a7;
+      border-radius: 4px;
+      padding: 1rem 1.25rem;
+      font-size: 0.88rem;
+      color: #2e7d32;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    /* CONTACT */
+    .contact-section {
+      padding: 6rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-icon {
+      width: 38px; height: 38px;
+      background: var(--electric-soft);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-value { font-size: 0.95rem; color: var(--black); }
+
+    .contact-submit {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      border: 2px solid var(--black);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .contact-submit:hover { background: var(--electric); border-color: var(--electric); }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.4);
+      padding: 2.5rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .footer-logo span { color: var(--electric); }
+    .footer-copy { font-size: 0.78rem; }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideLeft {
+      from { opacity: 0; transform: translateX(24px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 5rem 1.5rem 3rem; }
+      .section { padding: 4rem 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .why-section { padding: 4rem 1.5rem; }
+      .careers-section { padding: 4rem 1.5rem; }
+      .careers-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-section { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Miami<span>Metro</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#careers" class="nav-cta">Apply Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Miami Metro LLC — South Florida's Growth Engine</p>
+      <h1 class="hero-title">Growth<br />Without<br /><em>Limits.</em></h1>
+      <p class="hero-sub">We build field sales teams and deploy AI-powered marketing across telecommunications and digital channels — driving real revenue, in person and online.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn-primary">Our Services →</a>
+        <a href="#careers" class="btn-outline">Join the Team</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-graphic">
+        <div class="hero-circle hc1"></div>
+        <div class="hero-circle hc2"></div>
+        <div class="hero-circle hc3"></div>
+      </div>
+      <div class="hero-stat-cards">
+        <div class="stat-card">
+          <div class="stat-dot"></div>
+          <span class="stat-label">Verticals</span>
+          <span class="stat-val">3+</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-dot"></div>
+          <span class="stat-label">AI-Powered</span>
+          <span class="stat-val">100%</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-dot"></div>
+          <span class="stat-label">Based in</span>
+          <span class="stat-val">Miami, FL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="ticker-item">Telecommunications</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">AI Marketing</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">Content Creation</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">Field Sales</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">Digital Growth</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">South Florida</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">Telecommunications</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">AI Marketing</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">Content Creation</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">Field Sales</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">Digital Growth</span>
+      <span class="ticker-sep">◆</span>
+      <span class="ticker-item">South Florida</span>
+      <span class="ticker-sep">◆</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="reveal">
+      <p class="section-label">What We Do</p>
+      <h2 class="section-title">Multiple verticals. One relentless focus: results.</h2>
+      <p class="section-sub">Miami Metro combines boots-on-the-ground field sales teams with AI-driven marketing infrastructure — built to generate real revenue, not just impressions.</p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-icon">📡</div>
+        <h3 class="service-name">Telecommunications</h3>
+        <p class="service-desc">Authorized ISO for Assurance Wireless / T-Mobile. Our field agents connect underserved communities across South Florida with free government-subsidized wireless plans through the Lifeline program — door to door, event-based, and community outreach.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3 class="service-name">AI-Powered Marketing</h3>
+        <p class="service-desc">Not your typical marketing agency. We build content engines, automate lead generation, and use AI to produce high-converting assets at scale — across social media, video, and digital channels. Traffic and sales, not just reach.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎬</div>
+        <h3 class="service-name">Content Creation</h3>
+        <p class="service-desc">From scripted short-form video to branded social campaigns, we produce content that moves audiences and drives measurable action. Built for the algorithm, designed for real conversion — not just likes.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚀</div>
+        <h3 class="service-name">Field Sales Operations</h3>
+        <p class="service-desc">We build, train, and deploy high-performance field sales teams across Miami-Dade, Broward, and Palm Beach. Our agents show up, connect with real people, and close — at the door, at events, and in the community.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why-section" id="why">
+    <div class="reveal">
+      <p class="section-label">Why Miami Metro</p>
+      <h2 class="section-title">We don't just execute. We build systems that scale.</h2>
+      <p class="section-sub">Rooted in Miami. Built for growth. Every operation we run is powered by modern technology, real relationships, and a team that shows up every single day.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="why-num">AI</div>
+        <div class="why-label">Native Operations</div>
+        <p class="why-desc">Every campaign and workflow we build is designed around AI from day one — not bolted on after.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-num">100%</div>
+        <div class="why-label">South Florida</div>
+        <p class="why-desc">We know this market. Miami-Dade, Broward, Palm Beach — our teams operate where your customers live.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-num">Real</div>
+        <div class="why-label">Results Focus</div>
+        <p class="why-desc">We measure success in revenue, signups, and conversions — not vanity metrics. Every effort is tied to a real outcome.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-num">Fast</div>
+        <div class="why-label">Execution Speed</div>
+        <p class="why-desc">Campaigns launch in days. Field teams are deployed and producing results in weeks — not months.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREERS -->
+  <section class="careers-section" id="careers">
+    <div class="careers-layout">
+      <div class="careers-left reveal">
+        <p class="section-label">Join the Team</p>
+        <h2 class="section-title">Ready to build something real?</h2>
+        <p class="section-sub">We're growing fast and looking for driven, hungry individuals who want uncapped earning potential and a chance to grow with a company that's just getting started.</p>
+        <ul class="perks-list">
+          <li><span class="perk-icon">✦</span> Competitive commissions — uncapped earning potential</li>
+          <li><span class="perk-icon">✦</span> Flexible schedule — field or remote options available</li>
+          <li><span class="perk-icon">✦</span> Full training and tools provided from day one</li>
+          <li><span class="perk-icon">✦</span> Fast-growth company — leadership opportunities available</li>
+          <li><span class="perk-icon">✦</span> Work across telecom, marketing, content creation, and more</li>
+          <li><span class="perk-icon">✦</span> South Florida based — Miami, Broward, Palm Beach</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="apply-form">
+          <h3 class="form-title">Apply Now</h3>
+          <p class="form-sub">Fill out the form and our team will reach out within 48 hours.</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Carlos" id="fname" />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Rivera" id="lname" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="you@email.com" id="email" />
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(305) 000-0000" id="phone" />
+          </div>
+          <div class="form-group">
+            <label>Area of Interest</label>
+            <select id="role">
+              <option value="">Select a role...</option>
+              <option>Field Sales Agent — Telecom</option>
+              <option>Digital Marketing / Content Creator</option>
+              <option>Online Sales Representative</option>
+              <option>Team Leader / Manager</option>
+              <option>Other — I'll describe below</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tell Us About Yourself</label>
+            <textarea placeholder="Brief background, experience, why you're interested..." id="message"></textarea>
+          </div>
+          <button class="form-submit" onclick="submitApplication()">Submit Application →</button>
+          <div class="success-msg" id="success-msg">✓ Application received! We'll be in touch within 48 hours.</div>
+          <p class="form-note">We review every application personally.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="reveal">
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-title">Let's talk business.</h2>
+      <p class="section-sub">Whether you're a potential partner, client, or just want to learn more about what we do — we'd love to hear from you.</p>
+      <div class="contact-info-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <p class="contact-label">Location</p>
+          <p class="contact-value">Miami, Florida</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <p class="contact-label">Email</p>
+          <p class="contact-value">hello@miamimetro.us</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">🌐</div>
+        <div>
+          <p class="contact-label">Website</p>
+          <p class="contact-value">miamimetro.us</p>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="apply-form">
+        <h3 class="form-title">Send a Message</h3>
+        <p class="form-sub">For business inquiries, partnerships, and general questions.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="Full Name" id="cname" />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="you@email.com" id="cemail" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" placeholder="Partnership / Inquiry / Other" id="csubject" />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="How can we help?" id="cmessage"></textarea>
+        </div>
+        <button class="contact-submit" onclick="submitContact()">Send Message →</button>
+        <div class="success-msg" id="contact-success">✓ Message sent! We'll respond shortly.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Miami<span>Metro</span> LLC</div>
+    <p class="footer-copy">© 2025 Miami Metro LLC. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    function submitApplication() {
+      const fname = document.getElementById('fname').value;
+      const email = document.getElementById('email').value;
+      const role = document.getElementById('role').value;
+      if (!fname || !email || !role) {
+        alert('Please fill in your name, email, and area of interest.');
+        return;
+      }
+      document.getElementById('success-msg').style.display = 'block';
+      ['fname','lname','email','phone','message'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('role').value = '';
+    }
+
+    function submitContact() {
+      const name = document.getElementById('cname').value;
+      const email = document.getElementById('cemail').value;
+      const msg = document.getElementById('cmessage').value;
+      if (!name || !email || !msg) {
+        alert('Please fill in your name, email, and message.');
+        return;
+      }
+      document.getElementById('contact-success').style.display = 'block';
+      ['cname','cemail','csubject','cmessage'].forEach(id => document.getElementById(id).value = '');
+    }
+  </script>
+</body>
+</html>
