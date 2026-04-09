@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)file:///Users/305partners/Downloads/index_1.html -->
+<!-- saved from url=(0048)file:///Users/305partners/Downloads/index_2.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -108,8 +108,9 @@
       text-transform: uppercase;
       color: var(--electric);
       margin-bottom: 1.5rem;
-      opacity: 0;
+      opacity: 1;
       animation: fadeUp 0.8s ease 0.2s forwards;
+      animation-fill-mode: forwards;
     }
 
     .hero-title {
@@ -120,8 +121,9 @@
       letter-spacing: -0.04em;
       color: var(--black);
       margin-bottom: 2rem;
-      opacity: 0;
+      opacity: 1;
       animation: fadeUp 0.8s ease 0.4s forwards;
+      animation-fill-mode: forwards;
     }
 
     .hero-title em { font-style: normal; color: var(--electric); }
@@ -133,16 +135,18 @@
       color: var(--dark-gray);
       max-width: 420px;
       margin-bottom: 3rem;
-      opacity: 0;
+      opacity: 1;
       animation: fadeUp 0.8s ease 0.6s forwards;
+      animation-fill-mode: forwards;
     }
 
     .hero-actions {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
-      opacity: 0;
+      opacity: 1;
       animation: fadeUp 0.8s ease 0.8s forwards;
+      animation-fill-mode: forwards;
     }
 
     .btn-primary {
@@ -221,8 +225,9 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      opacity: 0;
+      opacity: 1;
       animation: slideLeft 0.6s ease forwards;
+      animation-fill-mode: forwards;
     }
 
     .stat-card:nth-child(1) { animation-delay: 1s; }
@@ -645,13 +650,7 @@
       100% { transform: translateX(-50%); }
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    
 
     /* MOBILE */
     @media (max-width: 900px) {
@@ -671,19 +670,34 @@
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
       .footer-links { flex-wrap: wrap; justify-content: center; }
     }
+  
+    /* Force all content visible */
+    .reveal, .hero-eyebrow, .hero-title, .hero-sub, .hero-actions, .stat-card {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
+
+
+    .hero-eyebrow, .hero-title, .hero-sub, .hero-actions {
+      opacity: 1 !important;
+    }
+    .stat-card {
+      opacity: 1 !important;
+    }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
-    <a href="file:///Users/305partners/Downloads/index_1.html#" class="nav-logo">Miami<span>Metro</span></a>
+    <a href="file:///Users/305partners/Downloads/index_2.html#" class="nav-logo">Miami<span>Metro</span></a>
     <ul class="nav-links">
-      <li><a href="file:///Users/305partners/Downloads/index_1.html#services">Services</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index_1.html#why">Why Us</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index_1.html#careers">Careers</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index_1.html#contact">Contact</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index_1.html#careers" class="nav-cta">Apply Now</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_2.html#services">Services</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_2.html#why">Why Us</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_2.html#careers">Careers</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_2.html#contact">Contact</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_2.html#careers" class="nav-cta">Apply Now</a></li>
     </ul>
   </nav>
 
@@ -694,8 +708,8 @@
       <h1 class="hero-title">Growth<br>Without<br><em>Limits.</em></h1>
       <p class="hero-sub">We build field sales teams and deploy AI-powered marketing across telecommunications and digital channels — driving real revenue, in person and online.</p>
       <div class="hero-actions">
-        <a href="file:///Users/305partners/Downloads/index_1.html#services" class="btn-primary">Our Services →</a>
-        <a href="file:///Users/305partners/Downloads/index_1.html#careers" class="btn-outline">Join the Team</a>
+        <a href="file:///Users/305partners/Downloads/index_2.html#services" class="btn-primary">Our Services →</a>
+        <a href="file:///Users/305partners/Downloads/index_2.html#careers" class="btn-outline">Join the Team</a>
       </div>
     </div>
     <div class="hero-right">
@@ -756,12 +770,12 @@
 
   <!-- SERVICES -->
   <section class="section" id="services">
-    <div class="reveal">
+    <div class="">
       <p class="section-label">What We Do</p>
       <h2 class="section-title">Multiple verticals. One relentless focus: results.</h2>
       <p class="section-sub">Miami Metro combines boots-on-the-ground field sales teams with AI-driven marketing infrastructure — built to generate real revenue, not just impressions.</p>
     </div>
-    <div class="services-grid reveal">
+    <div class="services-grid">
       <div class="service-card">
         <div class="service-icon">📡</div>
         <h3 class="service-name">Telecommunications</h3>
@@ -787,28 +801,28 @@
 
   <!-- WHY US -->
   <section class="why-section" id="why">
-    <div class="reveal">
+    <div class="">
       <p class="section-label">Why Miami Metro</p>
       <h2 class="section-title">We don't just execute. We build systems that scale.</h2>
       <p class="section-sub">Rooted in Miami. Built for growth. Every operation we run is powered by modern technology, real relationships, and a team that shows up every single day.</p>
     </div>
     <div class="why-grid">
-      <div class="why-item reveal">
+      <div class="why-item">
         <div class="why-num">AI</div>
         <div class="why-label">Native Operations</div>
         <p class="why-desc">Every campaign and workflow we build is designed around AI from day one — not bolted on after.</p>
       </div>
-      <div class="why-item reveal">
+      <div class="why-item">
         <div class="why-num">100%</div>
         <div class="why-label">South Florida</div>
         <p class="why-desc">We know this market. Miami-Dade, Broward, Palm Beach — our teams operate where your customers live.</p>
       </div>
-      <div class="why-item reveal">
+      <div class="why-item">
         <div class="why-num">Real</div>
         <div class="why-label">Results Focus</div>
         <p class="why-desc">We measure success in revenue, signups, and conversions — not vanity metrics. Every effort is tied to a real outcome.</p>
       </div>
-      <div class="why-item reveal">
+      <div class="why-item">
         <div class="why-num">Fast</div>
         <div class="why-label">Execution Speed</div>
         <p class="why-desc">Campaigns launch in days. Field teams are deployed and producing results in weeks — not months.</p>
@@ -819,7 +833,7 @@
   <!-- CAREERS -->
   <section class="careers-section" id="careers">
     <div class="careers-layout">
-      <div class="careers-left reveal">
+      <div class="careers-left">
         <p class="section-label">Join the Team</p>
         <h2 class="section-title">Ready to build something real?</h2>
         <p class="section-sub">We're growing fast and looking for driven, hungry individuals who want uncapped earning potential and a chance to grow with a company that's just getting started.</p>
@@ -832,7 +846,7 @@
           <li><span class="perk-icon">✦</span> South Florida based — Miami, Broward, Palm Beach</li>
         </ul>
       </div>
-      <div class="reveal">
+      <div class="">
         <div class="apply-form">
           <h3 class="form-title">Apply Now</h3>
           <p class="form-sub">Fill out the form and our team will reach out within 48 hours.</p>
@@ -879,7 +893,7 @@
 
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
-    <div class="reveal">
+    <div class="">
       <p class="section-label">Get in Touch</p>
       <h2 class="section-title">Let's talk business.</h2>
       <p class="section-sub">Whether you're a potential partner, client, or just want to learn more about what we do — we'd love to hear from you.</p>
@@ -905,7 +919,7 @@
         </div>
       </div>
     </div>
-    <div class="reveal">
+    <div class="">
       <div class="apply-form">
         <h3 class="form-title">Send a Message</h3>
         <p class="form-sub">For business inquiries, partnerships, and general questions.</p>
@@ -938,18 +952,18 @@
     <div class="footer-logo">Miami<span>Metro</span> LLC</div>
     <p class="footer-copy">© 2025 Miami Metro LLC. All rights reserved.</p>
     <ul class="footer-links">
-      <li><a href="file:///Users/305partners/Downloads/index_1.html#services">Services</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index_1.html#careers">Careers</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index_1.html#contact">Contact</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_2.html#services">Services</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_2.html#careers">Careers</a></li>
+      <li><a href="file:///Users/305partners/Downloads/index_2.html#contact">Contact</a></li>
     </ul>
   </footer>
 
   <script data-cfasync="false" src="file:///cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    const reveals = document.querySelectorAll('.reveal');
+    consts = document.querySelectorAll('.reveal');
 
     // Fallback: make everything visible after 300ms in case observer doesn't fire
     setTimeout(() => {
-      reveals.forEach(el => el.classList.add('visible'));
+     s.forEach(el => el.classList.add('visible'));
     }, 300);
 
     if ('IntersectionObserver' in window) {
@@ -961,7 +975,7 @@
           }
         });
       }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
-      reveals.forEach(el => observer.observe(el));
+     s.forEach(el => observer.observe(el));
     }
 
     function submitApplication() {
