@@ -1,906 +1,853 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)file:///Users/305partners/Downloads/index_3.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miami Metro — Growth Without Limits</title>
-  <link rel="icon" type="image/x-icon" href="file:///Users/305partners/Downloads/favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="file:///Users/305partners/Downloads/favicon.svg">
-  <link rel="apple-touch-icon" href="file:///Users/305partners/Downloads/favicon-192.png">
-  <link href="./index_files/css2" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --white: #ffffff;
-      --off-white: #f7f7f5;
-      --light-gray: #ebebeb;
-      --mid-gray: #9a9a9a;
-      --dark-gray: #3a3a3a;
-      --black: #111111;
-      --electric: #0057ff;
-      --electric-soft: #e8efff;
-      --font-display: 'Syne', sans-serif;
-      --font-body: 'DM Sans', sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--white);
-      color: var(--black);
-      overflow-x: hidden;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem 4rem;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--light-gray);
-    }
-
-    .nav-logo {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.2rem;
-      letter-spacing: -0.03em;
-      color: var(--black);
-      text-decoration: none;
-    }
-
-    .nav-logo span { color: var(--electric); }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--dark-gray);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--electric); }
-
-    .nav-cta {
-      background: var(--black);
-      color: var(--white) !important;
-      padding: 0.6rem 1.4rem;
-      border-radius: 2px;
-      transition: background 0.25s !important;
-    }
-
-    .nav-cta:hover { background: var(--electric) !important; }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 80px;
-    }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem 4rem;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--electric);
-      margin-bottom: 1.5rem;
-      opacity: 1;
-      animation: fadeUp 0.8s ease 0.2s forwards;
-      animation-fill-mode: forwards;
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 5vw, 5.5rem);
-      font-weight: 800;
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-      color: var(--black);
-      margin-bottom: 2rem;
-      opacity: 1;
-      animation: fadeUp 0.8s ease 0.4s forwards;
-      animation-fill-mode: forwards;
-    }
-
-    .hero-title em { font-style: normal; color: var(--electric); }
-
-    .hero-sub {
-      font-size: 1.05rem;
-      font-weight: 300;
-      line-height: 1.7;
-      color: var(--dark-gray);
-      max-width: 420px;
-      margin-bottom: 3rem;
-      opacity: 1;
-      animation: fadeUp 0.8s ease 0.6s forwards;
-      animation-fill-mode: forwards;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      opacity: 1;
-      animation: fadeUp 0.8s ease 0.8s forwards;
-      animation-fill-mode: forwards;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      background: var(--black);
-      color: var(--white);
-      font-family: var(--font-body);
-      font-size: 0.88rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      padding: 1rem 2rem;
-      border-radius: 2px;
-      text-decoration: none;
-      border: 2px solid var(--black);
-      transition: all 0.25s ease;
-    }
-
-    .btn-primary:hover { background: var(--electric); border-color: var(--electric); }
-
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      background: transparent;
-      color: var(--black);
-      font-family: var(--font-body);
-      font-size: 0.88rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      padding: 1rem 2rem;
-      border-radius: 2px;
-      text-decoration: none;
-      border: 2px solid var(--black);
-      transition: all 0.25s ease;
-    }
-
-    .btn-outline:hover { background: var(--black); color: var(--white); }
-
-    .hero-right {
-      background: var(--off-white);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-graphic { position: relative; width: 340px; height: 340px; }
-
-    .hero-circle {
-      position: absolute;
-      border-radius: 50%;
-      animation: pulse 4s ease-in-out infinite;
-    }
-
-    .hc1 { width: 340px; height: 340px; background: var(--electric-soft); top: 0; left: 0; animation-delay: 0s; }
-    .hc2 { width: 240px; height: 240px; background: rgba(0,87,255,0.12); top: 50px; left: 50px; animation-delay: 0.5s; }
-    .hc3 { width: 140px; height: 140px; background: var(--electric); top: 100px; left: 100px; animation-delay: 1s; }
-
-    .hero-stat-cards {
-      position: absolute;
-      bottom: 3rem;
-      right: 3rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .stat-card {
-      background: var(--white);
-      border: 1px solid var(--light-gray);
-      border-radius: 4px;
-      padding: 0.75rem 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      opacity: 1;
-      animation: slideLeft 0.6s ease forwards;
-      animation-fill-mode: forwards;
-    }
-
-    .stat-card:nth-child(1) { animation-delay: 1s; }
-    .stat-card:nth-child(2) { animation-delay: 1.2s; }
-    .stat-card:nth-child(3) { animation-delay: 1.4s; }
-
-    .stat-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--electric); flex-shrink: 0; }
-    .stat-label { font-size: 0.78rem; font-weight: 500; color: var(--dark-gray); }
-    .stat-val { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--black); margin-left: auto; padding-left: 1rem; }
-
-    /* TICKER */
-    .ticker {
-      background: var(--black);
-      color: var(--white);
-      padding: 0.9rem 0;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .ticker-inner {
-      display: inline-flex;
-      gap: 3rem;
-      animation: ticker 20s linear infinite;
-    }
-
-    .ticker-item {
-      font-family: var(--font-display);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .ticker-sep { color: var(--electric); }
-
-    /* SECTIONS */
-    .section { padding: 7rem 4rem; }
-
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--electric);
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      color: var(--black);
-      margin-bottom: 1.5rem;
-      max-width: 600px;
-    }
-
-    .section-sub {
-      font-size: 1rem;
-      font-weight: 300;
-      line-height: 1.7;
-      color: var(--dark-gray);
-      max-width: 500px;
-      margin-bottom: 4rem;
-    }
-
-    /* SERVICES — 2x2 grid */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: var(--light-gray);
-      border: 1px solid var(--light-gray);
-    }
-
-    .service-card {
-      background: var(--white);
-      padding: 2.5rem;
-      transition: background 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      height: 3px; width: 0;
-      background: var(--electric);
-      transition: width 0.4s ease;
-    }
-
-    .service-card:hover { background: var(--off-white); }
-    .service-card:hover::after { width: 100%; }
-
-    .service-icon {
-      width: 44px; height: 44px;
-      background: var(--electric-soft);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-      font-size: 1.3rem;
-    }
-
-    .service-name {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.75rem;
-      color: var(--black);
-    }
-
-    .service-desc {
-      font-size: 0.9rem;
-      font-weight: 300;
-      line-height: 1.65;
-      color: var(--mid-gray);
-    }
-
-    /* WHY US */
-    .why-section {
-      background: var(--black);
-      color: var(--white);
-      padding: 7rem 4rem;
-    }
-
-    .why-section .section-label { color: var(--electric); }
-    .why-section .section-title { color: var(--white); max-width: 700px; }
-    .why-section .section-sub { color: rgba(255,255,255,0.5); }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .why-item {
-      padding: 2rem 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .why-num {
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--electric);
-      letter-spacing: -0.04em;
-      margin-bottom: 0.5rem;
-    }
-
-    .why-label {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-
-    .why-desc {
-      font-size: 0.85rem;
-      font-weight: 300;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.5);
-    }
-
-    /* CAREERS */
-    .careers-section {
-      padding: 7rem 4rem;
-      background: var(--off-white);
-    }
-
-    .careers-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 5rem;
-      align-items: start;
-    }
-
-    .perks-list {
-      list-style: none;
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .perks-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      font-size: 0.92rem;
-      color: var(--dark-gray);
-      line-height: 1.5;
-    }
-
-    .perk-icon { color: var(--electric); flex-shrink: 0; margin-top: 0.1rem; }
-
-    /* FORM */
-    .apply-form {
-      background: var(--white);
-      border: 1px solid var(--light-gray);
-      border-radius: 4px;
-      padding: 2.5rem;
-    }
-
-    .form-title {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.4rem;
-    }
-
-    .form-sub {
-      font-size: 0.88rem;
-      color: var(--mid-gray);
-      margin-bottom: 2rem;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .form-group label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--dark-gray);
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: var(--black);
-      background: var(--off-white);
-      border: 1px solid var(--light-gray);
-      border-radius: 2px;
-      padding: 0.75rem 1rem;
-      width: 100%;
-      outline: none;
-      transition: border-color 0.2s, background 0.2s;
-      -webkit-appearance: none;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--electric);
-      background: var(--white);
-    }
-
-    .form-group textarea { resize: vertical; min-height: 100px; }
-
-    .form-submit {
-      width: 100%;
-      background: var(--black);
-      color: var(--white);
-      font-family: var(--font-body);
-      font-size: 0.88rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 1rem;
-      border: none;
-      border-radius: 2px;
-      cursor: pointer;
-      transition: background 0.25s;
-      margin-top: 0.5rem;
-    }
-
-    .form-submit:hover { background: var(--electric); }
-
-    .form-note {
-      font-size: 0.75rem;
-      color: var(--mid-gray);
-      text-align: center;
-      margin-top: 0.75rem;
-    }
-
-    .success-msg {
-      display: none;
-      background: #e8f5e9;
-      border: 1px solid #a5d6a7;
-      border-radius: 4px;
-      padding: 1rem 1.25rem;
-      font-size: 0.88rem;
-      color: #2e7d32;
-      margin-top: 1rem;
-      text-align: center;
-    }
-
-    /* CONTACT */
-    .contact-section {
-      padding: 6rem 4rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      border-top: 1px solid var(--light-gray);
-    }
-
-    .contact-info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-icon {
-      width: 38px; height: 38px;
-      background: var(--electric-soft);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .contact-label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--mid-gray);
-      margin-bottom: 0.2rem;
-    }
-
-    .contact-value { font-size: 0.95rem; color: var(--black); }
-
-    .contact-submit {
-      background: var(--black);
-      color: var(--white);
-      font-family: var(--font-body);
-      font-size: 0.88rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 0.9rem 2rem;
-      border: 2px solid var(--black);
-      border-radius: 2px;
-      cursor: pointer;
-      transition: all 0.25s;
-    }
-
-    .contact-submit:hover { background: var(--electric); border-color: var(--electric); }
-
-    /* FOOTER */
-    footer {
-      background: var(--black);
-      color: rgba(255,255,255,0.4);
-      padding: 2.5rem 4rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-logo {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1rem;
-      color: var(--white);
-      letter-spacing: -0.02em;
-    }
-
-    .footer-logo span { color: var(--electric); }
-    .footer-copy { font-size: 0.78rem; }
-
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .footer-links a {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.4);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--white); }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideLeft {
-      from { opacity: 0; transform: translateX(24px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.04); }
-    }
-
-    @keyframes ticker {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    
-
-    /* MOBILE */
-    @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-right { display: none; }
-      .hero-left { padding: 5rem 1.5rem 3rem; }
-      .section { padding: 4rem 1.5rem; }
-      .services-grid { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: 1fr 1fr; }
-      .why-section { padding: 4rem 1.5rem; }
-      .careers-section { padding: 4rem 1.5rem; }
-      .careers-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-      .contact-section { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
-      .form-row { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
-      .footer-links { flex-wrap: wrap; justify-content: center; }
-    }
-  
-    /* Force all content visible */
-    .reveal, .hero-eyebrow, .hero-title, .hero-sub, .hero-actions, .stat-card {
-      opacity: 1 !important;
-      transform: none !important;
-      animation: none !important;
-    }
-
-
-    .hero-eyebrow, .hero-title, .hero-sub, .hero-actions {
-      opacity: 1 !important;
-    }
-    .stat-card {
-      opacity: 1 !important;
-    }
-  </style>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miami Metro — AI-native marketing that moves real revenue</title>
+<meta name="description" content="Miami Metro builds AI-native marketing infrastructure for businesses that need actual revenue, not impressions. Custom AI tools, content engines, field sales operations — Miami-headquartered, deployed nationwide." />
+<meta property="og:title" content="Miami Metro — AI-native marketing that moves real revenue" />
+<meta property="og:description" content="AI-native marketing infrastructure for businesses that need actual revenue, not impressions." />
+<meta property="og:url" content="https://miamimetro.us/" />
+<meta property="og:site_name" content="Miami Metro" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#0057ff" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/favicon-192.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --white: #ffffff;
+    --off-white: #f7f7f5;
+    --light-gray: #ebebeb;
+    --mid-gray: #9a9a9a;
+    --dark-gray: #3a3a3a;
+    --black: #111111;
+    --electric: #0057ff;
+    --electric-soft: #e8efff;
+    --electric-dark: #0044cc;
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+    line-height: 1.55;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--light-gray);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -0.03em;
+    color: var(--black);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--electric); }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--dark-gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--electric); }
+  .nav-cta {
+    background: var(--black);
+    color: var(--white) !important;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    font-weight: 600 !important;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--electric); color: var(--white) !important; transform: translateY(-1px); }
+  @media (max-width: 800px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .nav-links li:not(:last-child) { display: none; }
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    padding: 9rem 4rem 6rem;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--electric);
+    background: var(--electric-soft);
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+  }
+  .hero-title em { font-style: normal; color: var(--electric); }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--dark-gray);
+    max-width: 540px;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .btn-primary, .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.95rem 1.7rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    border: 1.5px solid transparent;
+  }
+  .btn-primary {
+    background: var(--black);
+    color: var(--white);
+  }
+  .btn-primary:hover {
+    background: var(--electric);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 87, 255, 0.28);
+  }
+  .btn-outline {
+    color: var(--black);
+    border-color: var(--black);
+  }
+  .btn-outline:hover {
+    background: var(--black);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+
+  .hero-right { position: relative; height: 100%; min-height: 380px; }
+  .hero-graphic {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  .hero-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.45;
+  }
+  .hc1 { width: 380px; height: 380px; background: var(--electric); top: -40px; right: 20px; }
+  .hc2 { width: 260px; height: 260px; background: #00cfa1; bottom: 40px; left: 0; opacity: 0.32; }
+  .hc3 { width: 180px; height: 180px; background: #ff4d8d; top: 50%; left: 50%; opacity: 0.25; }
+  .hero-stat-cards {
+    position: relative;
+    display: grid;
+    gap: 0.9rem;
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin-left: auto;
+    z-index: 2;
+  }
+  .stat-card {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 18px;
+    padding: 1.1rem 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  }
+  .stat-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--electric);
+    flex-shrink: 0;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--mid-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    flex: 1;
+  }
+  .stat-val {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--black);
+  }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 8rem 1.5rem 4rem; gap: 3rem; }
+    .hero-right { min-height: 300px; }
+  }
+
+  /* ─── TICKER ─── */
+  .ticker {
+    background: var(--black);
+    color: var(--white);
+    overflow: hidden;
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--dark-gray);
+    border-bottom: 1px solid var(--dark-gray);
+  }
+  .ticker-inner {
+    display: flex;
+    gap: 3.5rem;
+    white-space: nowrap;
+    animation: ticker-scroll 40s linear infinite;
+  }
+  .ticker-item {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+  .ticker-sep { color: var(--electric); font-size: 1rem; align-self: center; }
+  @keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ─── SECTION SHELL ─── */
+  .section {
+    padding: 7rem 4rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    margin-bottom: 1.2rem;
+    max-width: 760px;
+  }
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--dark-gray);
+    max-width: 680px;
+    line-height: 1.65;
+  }
+  @media (max-width: 800px) {
+    .section { padding: 5rem 1.5rem; }
+  }
+
+  /* ─── SERVICES ─── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+  .service-card {
+    background: var(--off-white);
+    border: 1px solid transparent;
+    border-radius: 24px;
+    padding: 2.2rem;
+    transition: all 0.25s;
+  }
+  .service-card:hover {
+    background: var(--white);
+    border-color: var(--electric);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(0, 87, 255, 0.08);
+  }
+  .service-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    display: inline-flex;
+    width: 52px; height: 52px;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border-radius: 14px;
+    border: 1px solid var(--light-gray);
+  }
+  .service-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 0.7rem;
+    color: var(--black);
+  }
+  .service-desc {
+    color: var(--dark-gray);
+    font-size: 0.97rem;
+    line-height: 1.6;
+  }
+  @media (max-width: 800px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ─── FLAGSHIP / PRODUCT SHOWCASE ─── */
+  .flagship {
+    background: var(--black);
+    color: var(--white);
+    padding: 7rem 4rem;
+  }
+  .flagship-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .flagship .section-label { color: #00cfa1; }
+  .flagship .section-title { color: var(--white); }
+  .flagship .section-sub { color: rgba(255,255,255,0.72); }
+  .flagship-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    border: 1px solid #2a2a2a;
+    border-radius: 24px;
+    padding: 2.5rem;
+  }
+  .flagship-product {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 1.4rem;
+  }
+  .flagship-product-mark {
+    width: 28px; height: 28px;
+    color: #00cfa1;
+  }
+  .flagship-tagline {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .flagship-desc {
+    color: rgba(255,255,255,0.72);
+    font-size: 0.97rem;
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+  }
+  .flagship-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #2a2a2a;
+    margin-bottom: 1.8rem;
+  }
+  .flagship-stat-val {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: #00cfa1;
+    display: block;
+  }
+  .flagship-stat-label {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .flagship-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #00cfa1;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: gap 0.2s;
+  }
+  .flagship-cta:hover { gap: 0.7rem; }
+  @media (max-width: 900px) {
+    .flagship { padding: 5rem 1.5rem; }
+    .flagship-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .flagship-stats { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ─── WHY US ─── */
+  .why-section { background: var(--off-white); padding: 7rem 4rem; }
+  .why-section .section { padding: 0; }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+  .why-item {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 1.8rem;
+    border: 1px solid var(--light-gray);
+  }
+  .why-num {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: var(--electric);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .why-label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--black);
+    margin-bottom: 0.6rem;
+  }
+  .why-desc {
+    font-size: 0.88rem;
+    color: var(--dark-gray);
+    line-height: 1.55;
+  }
+  @media (max-width: 900px) {
+    .why-section { padding: 5rem 1.5rem; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 540px) {
+    .why-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ─── CONTACT ─── */
+  .contact-section {
+    padding: 7rem 4rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+    padding: 1rem 1.2rem;
+    background: var(--off-white);
+    border-radius: 14px;
+  }
+  .contact-icon { font-size: 1.3rem; }
+  .contact-label {
+    font-size: 0.75rem;
+    color: var(--mid-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.2rem;
+  }
+  .contact-value {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--black);
+    font-size: 1.05rem;
+  }
+  .contact-value a { color: inherit; text-decoration: none; }
+  .contact-value a:hover { color: var(--electric); }
+
+  .contact-form {
+    background: var(--off-white);
+    border-radius: 24px;
+    padding: 2.5rem;
+  }
+  .form-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--black);
+  }
+  .form-sub {
+    color: var(--dark-gray);
+    font-size: 0.93rem;
+    margin-bottom: 1.6rem;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+  }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1.5px solid var(--light-gray);
+    border-radius: 12px;
+    background: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--black);
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--electric);
+  }
+  .form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+    font-family: var(--font-body);
+  }
+  .form-submit {
+    width: 100%;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.97rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .form-submit:hover { background: var(--electric); transform: translateY(-1px); }
+  .success-msg {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.9rem;
+    background: #d4f4dc;
+    color: #0a5a1f;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  @media (max-width: 900px) {
+    .contact-section { padding: 5rem 1.5rem; grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 3.5rem 4rem 2.5rem;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.7rem;
+  }
+  .footer-logo span { color: var(--electric); }
+  .footer-tag {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+  }
+  .footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--electric); }
+  .footer-copy {
+    color: rgba(255,255,255,0.45);
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+  }
+  @media (max-width: 800px) {
+    footer { padding: 2.5rem 1.5rem 2rem; }
+  }
+
+  /* ─── REVEAL ANIMATION ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Make the hero visible immediately, no fade-in delay */
+  .hero-eyebrow, .hero-title, .hero-sub, .hero-actions, .stat-card {
+    opacity: 1;
+    transform: none;
+  }
+</style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="file:///Users/305partners/Downloads/index_3.html#" class="nav-logo">Miami<span>Metro</span></a>
-    <ul class="nav-links">
-      <li><a href="file:///Users/305partners/Downloads/index_3.html#services">Services</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index_3.html#why">Why Us</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index_3.html#careers">Careers</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index_3.html#contact">Contact</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index_3.html#careers" class="nav-cta">Apply Now</a></li>
-    </ul>
-  </nav>
+<nav>
+  <a class="nav-logo" href="#home">Miami<span>Metro</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#flagship">Products</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-left">
-      <p class="hero-eyebrow">Miami Metro LLC — South Florida's Growth Engine</p>
-      <h1 class="hero-title">Growth<br>Without<br><em>Limits.</em></h1>
-      <p class="hero-sub">We build field sales teams and deploy AI-powered marketing across telecommunications and digital channels — driving real revenue, in person and online.</p>
-      <div class="hero-actions">
-        <a href="file:///Users/305partners/Downloads/index_3.html#services" class="btn-primary">Our Services →</a>
-        <a href="file:///Users/305partners/Downloads/index_3.html#careers" class="btn-outline">Join the Team</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-graphic">
-        <div class="hero-circle hc1"></div>
-        <div class="hero-circle hc2"></div>
-        <div class="hero-circle hc3"></div>
-      </div>
-      <div class="hero-stat-cards">
-        <div class="stat-card">
-          <div class="stat-dot"></div>
-          <span class="stat-label">Verticals</span>
-          <span class="stat-val">3+</span>
-        </div>
-        <div class="stat-card">
-          <div class="stat-dot"></div>
-          <span class="stat-label">AI-Powered</span>
-          <span class="stat-val">100%</span>
-        </div>
-        <div class="stat-card">
-          <div class="stat-dot"></div>
-          <span class="stat-label">Based in</span>
-          <span class="stat-val">Miami, FL</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TICKER -->
-  <div class="ticker">
-    <div class="ticker-inner">
-      <span class="ticker-item">Telecommunications</span>
-      <span class="ticker-sep">◆</span>
-      <span class="ticker-item">AI Marketing</span>
-      <span class="ticker-sep">◆</span>
-      <span class="ticker-item">Content Creation</span>
-      <span class="ticker-sep">◆</span>
-      <span class="ticker-item">Field Sales</span>
-      <span class="ticker-sep">◆</span>
-      <span class="ticker-item">Digital Growth</span>
-      <span class="ticker-sep">◆</span>
-      <span class="ticker-item">South Florida</span>
-      <span class="ticker-sep">◆</span>
-      <span class="ticker-item">Telecommunications</span>
-      <span class="ticker-sep">◆</span>
-      <span class="ticker-item">AI Marketing</span>
-      <span class="ticker-sep">◆</span>
-      <span class="ticker-item">Content Creation</span>
-      <span class="ticker-sep">◆</span>
-      <span class="ticker-item">Field Sales</span>
-      <span class="ticker-sep">◆</span>
-      <span class="ticker-item">Digital Growth</span>
-      <span class="ticker-sep">◆</span>
-      <span class="ticker-item">South Florida</span>
-      <span class="ticker-sep">◆</span>
+<!-- ─── HERO ─── -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-eyebrow">AI-NATIVE MARKETING · MIAMI HQ</p>
+    <h1 class="hero-title">Marketing<br>that <em>moves</em><br>real revenue.</h1>
+    <p class="hero-sub">We build AI-native marketing infrastructure for businesses that need actual revenue, not impressions. Custom AI tools, content engines, field operations — designed around AI from day one, not bolted on after.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">What We Build →</a>
+      <a href="#contact" class="btn-outline">Talk to Us</a>
     </div>
   </div>
+  <div class="hero-right">
+    <div class="hero-graphic">
+      <div class="hero-circle hc1"></div>
+      <div class="hero-circle hc2"></div>
+      <div class="hero-circle hc3"></div>
+    </div>
+    <div class="hero-stat-cards">
+      <div class="stat-card">
+        <div class="stat-dot"></div>
+        <span class="stat-label">AI-Native</span>
+        <span class="stat-val">Day 1</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-dot"></div>
+        <span class="stat-label">Headquartered</span>
+        <span class="stat-val">Miami, FL</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-dot"></div>
+        <span class="stat-label">Reach</span>
+        <span class="stat-val">Nationwide</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- SERVICES -->
-  <section class="section" id="services">
-    <div class="">
-      <p class="section-label">What We Do</p>
-      <h2 class="section-title">Multiple verticals. One relentless focus: results.</h2>
-      <p class="section-sub">Miami Metro combines boots-on-the-ground field sales teams with AI-driven marketing infrastructure — built to generate real revenue, not just impressions.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">📡</div>
-        <h3 class="service-name">Telecommunications</h3>
-        <p class="service-desc">Authorized ISO for Assurance Wireless / T-Mobile. Our field agents connect underserved communities across South Florida with free government-subsidized wireless plans through the Lifeline program — door to door, event-based, and community outreach.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🤖</div>
-        <h3 class="service-name">AI-Powered Marketing</h3>
-        <p class="service-desc">Not your typical marketing agency. We build content engines, automate lead generation, and use AI to produce high-converting assets at scale — across social media, video, and digital channels. Traffic and sales, not just reach.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🎬</div>
-        <h3 class="service-name">Content Creation</h3>
-        <p class="service-desc">From scripted short-form video to branded social campaigns, we produce content that moves audiences and drives measurable action. Built for the algorithm, designed for real conversion — not just likes.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🚀</div>
-        <h3 class="service-name">Field Sales Operations</h3>
-        <p class="service-desc">We build, train, and deploy high-performance field sales teams across Miami-Dade, Broward, and Palm Beach. Our agents show up, connect with real people, and close — at the door, at events, and in the community.</p>
-      </div>
-    </div>
-  </section>
+<!-- ─── TICKER ─── -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">AI Marketing</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">Custom AI Tools</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">Content Engines</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">Field Operations</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">Lead Generation</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">Revenue Systems</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">AI Marketing</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">Custom AI Tools</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">Content Engines</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">Field Operations</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">Lead Generation</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">Revenue Systems</span>
+    <span class="ticker-sep">◆</span>
+  </div>
+</div>
 
-  <!-- WHY US -->
-  <section class="why-section" id="why">
-    <div class="">
-      <p class="section-label">Why Miami Metro</p>
-      <h2 class="section-title">We don't just execute. We build systems that scale.</h2>
-      <p class="section-sub">Rooted in Miami. Built for growth. Every operation we run is powered by modern technology, real relationships, and a team that shows up every single day.</p>
+<!-- ─── SERVICES ─── -->
+<section class="section reveal" id="services">
+  <p class="section-label">What We Build</p>
+  <h2 class="section-title">Four practices. One operating principle: AI is the substrate, not the feature.</h2>
+  <p class="section-sub">Every campaign we run, every tool we build, every team we deploy is designed around AI from day one. The result is marketing infrastructure that scales without proportional headcount and delivers measurable revenue, not vanity metrics.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🤖</div>
+      <h3 class="service-name">AI-Native Marketing</h3>
+      <p class="service-desc">Content engines, automated lead generation, AI-produced creative at scale. Across social, search, video, and direct channels — built to convert, measured by revenue. We start with the funnel math, then let the AI do the heavy lifting.</p>
     </div>
+    <div class="service-card">
+      <div class="service-icon">⚙️</div>
+      <h3 class="service-name">Custom AI Tools</h3>
+      <p class="service-desc">When off-the-shelf software doesn't fit, we build it. Internal copilots, vertical SaaS, data enrichment pipelines, agent workflows — purpose-built tools that compound their value over time. See LeadCove below for our flagship.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎬</div>
+      <h3 class="service-name">Content Production</h3>
+      <p class="service-desc">From scripted short-form video to branded social campaigns to long-form thought leadership. AI-assisted production, human-curated taste. Built for the algorithm, designed for real conversion — not just reach.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🚀</div>
+      <h3 class="service-name">Field Operations</h3>
+      <p class="service-desc">Where digital meets the door. Field sales teams, community outreach, telecom programs — deployed across Miami-Dade, Broward, Palm Beach, and beyond. Real people, in person, closing where it counts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FLAGSHIP PRODUCT — LEADCOVE ─── -->
+<section class="flagship reveal" id="flagship">
+  <div class="flagship-inner">
+    <div>
+      <p class="section-label">Flagship Product</p>
+      <h2 class="section-title">When the right tool didn't exist, we built it.</h2>
+      <p class="section-sub">LeadCove is our purpose-built AI prospecting platform for real estate agents — the kind of vertical SaaS that turns bare property addresses into ready-to-call prospects with verified contact data, compliance flags, and CRM-ready output. It's also a working example of how we ship: idea to live customers in weeks, not quarters.</p>
+      <a href="https://leadcove.io" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;margin-top:1.5rem;color:#00cfa1;text-decoration:none;font-weight:600;">Visit LeadCove.io →</a>
+    </div>
+    <div class="flagship-card">
+      <div class="flagship-product">
+        <svg class="flagship-product-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="30" cy="14" r="3" fill="currentColor"/>
+        </svg>
+        LeadCove
+      </div>
+      <p class="flagship-tagline">More dials. Less prep.</p>
+      <p class="flagship-desc">Drop in a list of property addresses. Get back enriched prospect records — owner names, verified phones, emails, DNC + TCPA compliance flags, joint-owner unmasking, CRM-ready handoff. Built for working agents, not data analysts.</p>
+      <div class="flagship-stats">
+        <div>
+          <span class="flagship-stat-val">95%</span>
+          <span class="flagship-stat-label">Match Rate</span>
+        </div>
+        <div>
+          <span class="flagship-stat-val">3-4hr</span>
+          <span class="flagship-stat-label">Saved / Day</span>
+        </div>
+        <div>
+          <span class="flagship-stat-val">FL+</span>
+          <span class="flagship-stat-label">Coverage</span>
+        </div>
+      </div>
+      <a href="https://leadcove.io" target="_blank" rel="noopener" class="flagship-cta">Open LeadCove.io →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY US ─── -->
+<section class="why-section reveal" id="why">
+  <div class="section">
+    <p class="section-label">Why Miami Metro</p>
+    <h2 class="section-title">We don't just execute campaigns. We build the systems that produce them.</h2>
+    <p class="section-sub">Most marketing agencies sell hours. We sell systems — built around AI, owned by you, compounding in value over time. That's the difference between renting growth and building it.</p>
     <div class="why-grid">
       <div class="why-item">
         <div class="why-num">AI</div>
-        <div class="why-label">Native Operations</div>
-        <p class="why-desc">Every campaign and workflow we build is designed around AI from day one — not bolted on after.</p>
-      </div>
-      <div class="why-item">
-        <div class="why-num">100%</div>
-        <div class="why-label">South Florida</div>
-        <p class="why-desc">We know this market. Miami-Dade, Broward, Palm Beach — our teams operate where your customers live.</p>
+        <div class="why-label">Native, Not Bolted-On</div>
+        <p class="why-desc">Every workflow is designed around AI from day one. Not a layer on top of legacy infrastructure — the substrate itself.</p>
       </div>
       <div class="why-item">
         <div class="why-num">Real</div>
-        <div class="why-label">Results Focus</div>
-        <p class="why-desc">We measure success in revenue, signups, and conversions — not vanity metrics. Every effort is tied to a real outcome.</p>
+        <div class="why-label">Revenue Focus</div>
+        <p class="why-desc">We measure success in revenue, signups, and conversions — never vanity metrics. Every dollar spent ties to a real outcome.</p>
       </div>
       <div class="why-item">
         <div class="why-num">Fast</div>
         <div class="why-label">Execution Speed</div>
-        <p class="why-desc">Campaigns launch in days. Field teams are deployed and producing results in weeks — not months.</p>
+        <p class="why-desc">Campaigns launch in days. Custom tools in weeks. Field teams deployed and producing in under a month — not quarters.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">Own</div>
+        <div class="why-label">It Forever</div>
+        <p class="why-desc">When we build a system for you, you own it. Code, data, distribution. No platform lock-in, no monthly rent — compounding value.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CAREERS -->
-  <section class="careers-section" id="careers">
-    <div class="careers-layout">
-      <div class="careers-left">
-        <p class="section-label">Join the Team</p>
-        <h2 class="section-title">Ready to build something real?</h2>
-        <p class="section-sub">We're growing fast and looking for driven, hungry individuals who want uncapped earning potential and a chance to grow with a company that's just getting started.</p>
-        <ul class="perks-list">
-          <li><span class="perk-icon">✦</span> Competitive commissions — uncapped earning potential</li>
-          <li><span class="perk-icon">✦</span> Flexible schedule — field or remote options available</li>
-          <li><span class="perk-icon">✦</span> Full training and tools provided from day one</li>
-          <li><span class="perk-icon">✦</span> Fast-growth company — leadership opportunities available</li>
-          <li><span class="perk-icon">✦</span> Work across telecom, marketing, content creation, and more</li>
-          <li><span class="perk-icon">✦</span> South Florida based — Miami, Broward, Palm Beach</li>
-        </ul>
-      </div>
-      <div class="">
-        <div class="apply-form">
-          <h3 class="form-title">Apply Now</h3>
-          <p class="form-sub">Fill out the form and our team will reach out within 48 hours.</p>
-          <div class="form-row">
-            <div class="form-group">
-              <label>First Name</label>
-              <input type="text" placeholder="Carlos" id="fname">
-            </div>
-            <div class="form-group">
-              <label>Last Name</label>
-              <input type="text" placeholder="Rivera" id="lname">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" placeholder="you@email.com" id="email">
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" placeholder="(305) 000-0000" id="phone">
-          </div>
-          <div class="form-group">
-            <label>Area of Interest</label>
-            <select id="role">
-              <option value="">Select a role...</option>
-              <option>Field Sales Agent — Telecom</option>
-              <option>Digital Marketing / Content Creator</option>
-              <option>Online Sales Representative</option>
-              <option>Team Leader / Manager</option>
-              <option>Other — I'll describe below</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Tell Us About Yourself</label>
-            <textarea placeholder="Brief background, experience, why you&#39;re interested..." id="message"></textarea>
-          </div>
-          <button class="form-submit" onclick="submitApplication()">Submit Application →</button>
-          <div class="success-msg" id="success-msg">✓ Application received! We'll be in touch within 48 hours.</div>
-          <p class="form-note">We review every application personally.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact-section" id="contact">
-    <div class="">
-      <p class="section-label">Get in Touch</p>
-      <h2 class="section-title">Let's talk business.</h2>
-      <p class="section-sub">Whether you're a potential partner, client, or just want to learn more about what we do — we'd love to hear from you.</p>
+<!-- ─── CONTACT ─── -->
+<section class="contact-section reveal" id="contact">
+  <div>
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Tell us what you're trying to grow.</h2>
+    <p class="section-sub">Whether you need an AI tool built, a content engine deployed, or a field team launched — start with a conversation. We'll tell you what we can do and what we can't.</p>
+    <div style="margin-top:2rem">
       <div class="contact-info-item">
         <div class="contact-icon">📍</div>
         <div>
-          <p class="contact-label">Location</p>
+          <p class="contact-label">Headquarters</p>
           <p class="contact-value">Miami, Florida</p>
         </div>
       </div>
@@ -908,93 +855,94 @@
         <div class="contact-icon">✉️</div>
         <div>
           <p class="contact-label">Email</p>
-          <p class="contact-value">hello@miamimetro.us</p>
+          <p class="contact-value"><a href="mailto:hello@miamimetro.us">hello@miamimetro.us</a></p>
         </div>
       </div>
       <div class="contact-info-item">
         <div class="contact-icon">🌐</div>
         <div>
-          <p class="contact-label">Website</p>
-          <p class="contact-value">miamimetro.us</p>
+          <p class="contact-label">Flagship Product</p>
+          <p class="contact-value"><a href="https://leadcove.io" target="_blank" rel="noopener">leadcove.io</a></p>
         </div>
       </div>
     </div>
-    <div class="">
-      <div class="apply-form">
-        <h3 class="form-title">Send a Message</h3>
-        <p class="form-sub">For business inquiries, partnerships, and general questions.</p>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" placeholder="Full Name" id="cname">
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="you@email.com" id="cemail">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Subject</label>
-          <input type="text" placeholder="Partnership / Inquiry / Other" id="csubject">
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea placeholder="How can we help?" id="cmessage"></textarea>
-        </div>
-        <button class="contact-submit" onclick="submitContact()">Send Message →</button>
-        <div class="success-msg" id="contact-success">✓ Message sent! We'll respond shortly.</div>
+  </div>
+
+  <div class="contact-form">
+    <h3 class="form-title">Send a Message</h3>
+    <p class="form-sub">For partnerships, project inquiries, and general questions.</p>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="Full Name" id="cname">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="you@email.com" id="cemail">
       </div>
     </div>
-  </section>
+    <div class="form-group">
+      <label>Subject</label>
+      <input type="text" placeholder="Partnership / Inquiry / Other" id="csubject">
+    </div>
+    <div class="form-group">
+      <label>How can we help?</label>
+      <textarea placeholder="Tell us about your project, business, or growth goal..." id="cmessage"></textarea>
+    </div>
+    <button class="form-submit" onclick="submitContact()">Send Message →</button>
+    <div class="success-msg" id="contact-success">✓ Message sent. We'll respond within one business day.</div>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">Miami<span>Metro</span> LLC</div>
-    <p class="footer-copy">© 2025 Miami Metro LLC. All rights reserved.</p>
-    <ul class="footer-links">
-      <li><a href="file:///Users/305partners/Downloads/index_3.html#services">Services</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index_3.html#careers">Careers</a></li>
-      <li><a href="file:///Users/305partners/Downloads/index_3.html#contact">Contact</a></li>
-    </ul>
-  </footer>
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">Miami<span>Metro</span></div>
+  <p class="footer-tag">AI-native marketing. Real revenue. Miami HQ, nationwide reach.</p>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#flagship">Products</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://leadcove.io" target="_blank" rel="noopener">LeadCove</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 Miami Metro LLC · All rights reserved · <a href="mailto:hello@miamimetro.us" style="color:inherit;text-decoration:underline">hello@miamimetro.us</a></p>
+</footer>
 
-  <script data-cfasync="false" src="file:///cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    consts = document.querySelectorAll('.reveal');
+<script>
+  // Reveal-on-scroll animation
+  const reveals = document.querySelectorAll('.reveal');
+  setTimeout(() => reveals.forEach(el => el.classList.add('visible')), 300);
 
-    // Fallback: make everything visible after 300ms in case observer doesn't fire
-    setTimeout(() => {
-     s.forEach(el => el.classList.add('visible'));
-    }, 300);
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+    reveals.forEach(el => observer.observe(el));
+  }
 
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => entry.target.classList.add('visible'), i * 80);
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
-     s.forEach(el => observer.observe(el));
+  // Contact form — opens mailto with composed message
+  function submitContact() {
+    const name = document.getElementById('cname').value.trim();
+    const email = document.getElementById('cemail').value.trim();
+    const subject = document.getElementById('csubject').value.trim() || 'Inquiry from miamimetro.us';
+    const msg = document.getElementById('cmessage').value.trim();
+    if (!name || !email || !msg) {
+      alert('Please fill in your name, email, and message.');
+      return;
     }
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\n${msg}`
+    );
+    window.location.href = `mailto:hello@miamimetro.us?subject=${encodeURIComponent(subject)}&body=${body}`;
+    document.getElementById('contact-success').style.display = 'block';
+    ['cname','cemail','csubject','cmessage'].forEach(id => document.getElementById(id).value = '');
+  }
+</script>
 
-    function submitApplication() {
-      const fname = document.getElementById('fname').value;
-      const email = document.getElementById('email').value;
-      const role = document.getElementById('role').value;
-      if (!fname || !email || !role) {
-        alert('Please fill in your name, email, and area of interest.');
-        return;
-      }
-      document.getElementById('success-msg').style.display = 'block';
-      ['fname','lname','email','phone','message'].forEach(id => document.getElementById(id).value = '');
-      document.getElementById('role').value = '';
-    }
-
-    function submitContact() {
-      const name = document.getElementById('cname').value;
-      const email = document.getElementById('cemail').value;
-      const msg = document.getElementById('cmessage').value;
-      if (!name || !email || !msg) {
-        alert('Please fill in your name, email, and message.');
-    </script></body></html>
+</body>
+</html>
