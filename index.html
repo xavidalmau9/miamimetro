@@ -507,23 +507,39 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
-  .companion-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: #38bdf8;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: gap 0.2s;
+  .companion-screenshot {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #050810;
+    border: 1px solid rgba(56, 189, 248, 0.18);
+    box-shadow: 0 24px 60px rgba(56, 189, 248, 0.10);
+    padding: 8px;
   }
-  .companion-cta:hover { gap: 0.7rem; }
+  .companion-screenshot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  .companion-screenshot-caption {
+    position: absolute;
+    bottom: 14px; left: 14px;
+    font-family: 'Space Mono', ui-monospace, monospace;
+    font-size: 10px;
+    color: rgba(56, 189, 248, 0.7);
+    background: rgba(5, 8, 16, 0.85);
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    backdrop-filter: blur(6px);
+  }
   @media (max-width: 900px) {
     .companion { padding: 5rem 1.5rem; }
     .companion-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .companion-stats { grid-template-columns: 1fr 1fr; }
-    /* On mobile, put the card AFTER the copy for natural reading flow */
-    .companion-card { order: 2; }
+    /* On mobile, put the screenshot AFTER the copy for natural reading flow */
+    .companion-screenshot { order: 2; }
   }
 
   /* ─── WHY US ─── */
@@ -904,34 +920,15 @@
 <!-- ─── COMPANION PROJECT — GO ADVERTISING MISSION CONTROL ─── -->
 <section class="companion reveal" id="companion">
   <div class="companion-inner">
-    <div class="companion-card">
-      <div class="companion-product">
-        <span class="companion-product-mark">⬢</span>
-        GO Advertising · Mission Control
-      </div>
-      <p class="companion-tagline">A complete Google Ads command deck.</p>
-      <p class="companion-desc">Real-time KPIs, campaign grading, device performance, daily signup volume, and conversion attribution — all wired live to Google Ads + GA4 APIs. Built originally for our own Lifeline / Assurance Wireless campaigns, then turned into a productized dashboard we deploy for any high-volume Google Ads operation.</p>
-      <div class="companion-stats">
-        <div>
-          <span class="companion-stat-val">17</span>
-          <span class="companion-stat-label">Live Campaigns</span>
-        </div>
-        <div>
-          <span class="companion-stat-val">Real-Time</span>
-          <span class="companion-stat-label">GA4 + GAds</span>
-        </div>
-        <div>
-          <span class="companion-stat-val">$0.00</span>
-          <span class="companion-stat-label">Per-Seat Cost</span>
-        </div>
-      </div>
-      <a href="https://xavidalmau9.github.io/go-mission-control/" target="_blank" rel="noopener" class="companion-cta">View Live Demo →</a>
+    <div class="companion-screenshot">
+      <img src="go-advertising-preview.png" alt="GO Advertising · Mission Control — Google Ads dashboard preview" />
+      <div class="companion-screenshot-caption">GO Advertising · Mission Control — preview</div>
     </div>
     <div>
       <p class="section-label">Companion Project</p>
       <h2 class="section-title">When you need to see the funnel, not the spreadsheet.</h2>
-      <p class="section-sub">Most Google Ads dashboards bury the answer under tabs and drill-downs. We built a single mission-control view that shows what's working, what's losing money, and what to scale — no SQL, no exports, no waiting for the agency report. It's how we run our own paid acquisition, and it's the same dashboard we deploy for clients with serious ad spend.</p>
-      <a href="https://xavidalmau9.github.io/go-mission-control/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;margin-top:1.5rem;color:var(--electric);text-decoration:none;font-weight:600;">Open the live dashboard →</a>
+      <p class="section-sub">Most Google Ads dashboards bury the answer under tabs and drill-downs. We built a single mission-control view that shows what's working, what's losing money, and what to scale — no SQL, no exports, no waiting for the agency report. Real-time KPIs, campaign grading, device performance, daily signup volume, and full conversion attribution wired live to the Google Ads + GA4 APIs.</p>
+      <p class="section-sub" style="margin-top:1.2rem;font-size:0.95rem;color:var(--mid-gray);">Built originally for our own Lifeline / Assurance Wireless campaigns. Now a productized internal tool we deploy for any high-volume Google Ads operation. Available on request.</p>
     </div>
   </div>
 </section>
