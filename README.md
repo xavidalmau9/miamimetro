@@ -98,6 +98,10 @@ miamimetro/
 ├── CNAME                              ← Custom domain
 ├── favicon.svg / favicon.ico / favicon-192.png
 ├── go-advertising-preview.png
+├── logos/                             ← Official project logos
+│   ├── 305electricians.svg
+│   ├── go-advertising.png
+│   └── leadcove.svg
 └── README.md                          ← This file
 ```
 

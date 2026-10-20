@@ -6,6 +6,7 @@
 <title>Miami Metro LLC — AI-native marketing in Miami, FL</title>
 <meta name="description" content="Miami Metro LLC in Miami, Florida builds AI-native marketing and operates 305Electricians, a referral service connecting customers with licensed electricians." />
 <meta name="author" content="Miami Metro LLC" />
+<meta name="google-site-verification" content="YDdfg3RGyMbsxk2cm3ajaq1bh5JUPFubNFPECa6_XA0" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://miamimetro.us/" />
 <meta property="og:title" content="Miami Metro LLC — AI-native marketing in Miami, FL" />
@@ -506,9 +507,32 @@
     color: var(--white);
     margin-bottom: 1.4rem;
   }
-  .flagship-product-mark {
-    width: 28px; height: 28px;
-    color: #00cfa1;
+  .project-logo-link {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    line-height: 0;
+    flex: 0 0 auto;
+  }
+  .project-logo-link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+    border-radius: 10px;
+  }
+  .project-logo {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 72px;
+    max-width: min(320px, 100%);
+    object-fit: contain;
+    object-position: left center;
+  }
+  .section-logo { margin-bottom: 1.15rem; }
+  .project-logo-mark {
+    width: 72px;
+    height: 72px;
+    max-width: 72px;
   }
   .flagship-tagline {
     font-family: var(--font-display);
@@ -1138,11 +1162,9 @@
     </div>
     <div class="flagship-card">
       <div class="flagship-product">
-        <svg class="flagship-product-mark" viewBox="0 0 40 40" aria-hidden="true">
-          <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-          <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
-          <circle cx="30" cy="14" r="3" fill="currentColor"/>
-        </svg>
+        <a class="project-logo-link" href="https://leadcove.io" target="_blank" rel="noopener">
+          <img class="project-logo project-logo-mark" src="logos/leadcove.svg" alt="LeadCove" width="40" height="40" decoding="async" />
+        </a>
         LeadCove
       </div>
       <p class="flagship-tagline">More dials. Less prep.</p>
@@ -1174,6 +1196,9 @@
       <div class="companion-screenshot-caption">GO Advertising · Mission Control — preview</div>
     </div>
     <div>
+      <a class="project-logo-link section-logo" href="https://goadvertising.io/" target="_blank" rel="noopener">
+        <img class="project-logo" src="logos/go-advertising.png" alt="GO Advertising" width="1578" height="716" decoding="async" />
+      </a>
       <p class="section-label">Companion Project</p>
       <h2 class="section-title">When you need to see the funnel, not the spreadsheet.</h2>
       <p class="section-sub">Most Google Ads dashboards bury the answer under tabs and drill-downs. We built a single mission-control view that shows what's working, what's losing money, and what to scale — no SQL, no exports, no waiting for the agency report. Real-time KPIs, campaign grading, device performance, daily signup volume, and full conversion attribution wired live to the Google Ads + GA4 APIs.</p>
@@ -1186,6 +1211,9 @@
 <section class="business reveal" id="businesses">
   <div class="business-inner">
     <div>
+      <a class="project-logo-link section-logo" href="https://305electricians.com" target="_blank" rel="noopener">
+        <img class="project-logo" src="logos/305electricians.svg" alt="305Electricians" width="720" height="160" decoding="async" />
+      </a>
       <p class="section-label">A Miami Metro business</p>
       <h2 class="section-title">305Electricians connects Miami-Dade customers with licensed electricians.</h2>
       <p class="section-sub">305Electricians is a referral service operated by Miami Metro LLC. It connects Miami-Dade customers with independent licensed electricians, fast. Customers can call or ask for a callback in English or Spanish.</p>

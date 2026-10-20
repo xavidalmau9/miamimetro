@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 160" width="720" height="160">
+  <circle cx="80" cy="80" r="72" fill="#ff7a59"/>
+  <defs><clipPath id="sun"><circle cx="80" cy="80" r="72"/></clipPath></defs><path clip-path="url(#sun)" d="M0 96 Q40 84 80 96 T160 96 V160 H0 Z" fill="#0f6e6e"/>
+  <text x="80" y="76" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="900" font-size="50" fill="#fbf6ee" letter-spacing="-2">305</text>
+  <path d="M86 84 L68 114 H80 L74 136 L96 104 H84 Z" fill="#ffc43d" stroke="#0a4f4f" stroke-width="2" stroke-linejoin="round"/>
+  <text x="176" y="88" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="46" fill="#1d2a2f">305<tspan fill="#0f6e6e">Electricians</tspan></text>
+  <text x="178" y="122" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="15" fill="#5b6b70" letter-spacing="1">YOUR SOURCE FOR A LICENSED ELECTRICIAN, FAST</text>
+</svg>
