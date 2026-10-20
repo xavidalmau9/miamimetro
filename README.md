@@ -89,8 +89,16 @@ Log in to wherever you purchased `miamimetro.us` (Namecheap, GoDaddy, Squarespac
 
 ```
 miamimetro/
-├── index.html      ← Main website (all-in-one file)
-└── README.md       ← This file
+├── index.html                         ← Main website (all-in-one file)
+├── og-image.png                       ← 1200×630 social share image
+├── robots.txt                         ← Crawler rules (search + AI bots allowed)
+├── sitemap.xml                        ← Sitemap for https://miamimetro.us/
+├── llms.txt                           ← Short factual description for AI search
+├── 7f8cc100dbe26b2eeb9f26a3220e767e.txt  ← IndexNow key file
+├── CNAME                              ← Custom domain
+├── favicon.svg / favicon.ico / favicon-192.png
+├── go-advertising-preview.png
+└── README.md                          ← This file
 ```
 
 ---
