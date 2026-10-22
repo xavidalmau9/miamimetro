@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" width="520" height="160">
+  <g transform="translate(4,4) scale(0.95)"><circle cx="80" cy="80" r="76" fill="#ff7a59"/><defs><clipPath id="sun"><circle cx="80" cy="80" r="76"/></clipPath></defs><path clip-path="url(#sun)" d="M0 100 Q40 88 80 100 T160 100 V160 H0 Z" fill="#0b6fa4"/><path clip-path="url(#sun)" d="M0 122 Q40 110 80 122 T160 122 V160 H0 Z" fill="#08507a"/><path d="M80 18 C80 18 46 62 46 88 a34 34 0 0 0 68 0 C114 62 80 18 80 18 Z" fill="#7fd8f5" stroke="#08507a" stroke-width="3" stroke-linejoin="round"/></g>
+  <text x="176" y="96" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="50" fill="#1d2a2f">305<tspan fill="#0b6fa4">Plumbers</tspan></text>
+</svg>

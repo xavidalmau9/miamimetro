@@ -60,6 +60,12 @@
         },
         {
           "@type": "Brand",
+          "name": "305Plumbers",
+          "url": "https://305plumbers.com/",
+          "description": "Referral service operated by Miami Metro LLC that connects Miami-Dade customers with independent licensed plumbers. It does not perform plumbing work."
+        },
+        {
+          "@type": "Brand",
           "name": "LeadCove",
           "url": "https://leadcove.io/",
           "description": "AI prospecting platform for real estate agents, built by Miami Metro LLC."
@@ -698,6 +704,14 @@
     .companion-screenshot { order: 2; }
   }
 
+  /* ─── HOME-SERVICES BRANDS ─── */
+  .brands { background: var(--off-white); padding: 5rem 4rem; border-top: 1px solid var(--light-gray); }
+  .brands-inner { max-width: 1280px; margin: 0 auto; }
+  .brands-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.2rem; }
+  .brands .business-card { background: var(--white); }
+  .brands .brand-logo { height: 56px; width: auto; margin-bottom: 1rem; }
+  .brands .business-card p { color: var(--dark-gray); font-size: 0.98rem; line-height: 1.55; margin-bottom: 1.2rem; }
+  @media (max-width: 800px) { .brands { padding: 4rem 1.5rem; } .brands-grid { grid-template-columns: 1fr; } }
   /* ─── BUSINESS — 305ELECTRICIANS ─── */
   .business {
     background: var(--white);
@@ -1207,6 +1221,27 @@
   </div>
 </section>
 
+<!-- ─── HOME-SERVICES BRANDS ─── -->
+<section class="brands reveal" id="home-services">
+  <div class="brands-inner">
+    <p class="section-label">Our home-services brands</p>
+    <h2 class="section-title">Free referrals to independent licensed pros in Miami-Dade.</h2>
+    <p class="business-disclaimer">Both brands are referral services operated by Miami Metro LLC. Miami Metro LLC is not a contractor and does not perform electrical or plumbing work. The independent licensed pro does the work.</p>
+    <div class="brands-grid">
+      <div class="business-card">
+        <a href="https://305electricians.com" target="_blank" rel="noopener"><img class="brand-logo" src="logos/305electricians.svg" alt="305Electricians" width="252" height="56" decoding="async" /></a>
+        <p>Connects Miami-Dade homeowners with independent, Florida-licensed electricians.</p>
+        <a class="btn-outline" href="https://305electricians.com" target="_blank" rel="noopener">Visit 305electricians.com →</a>
+      </div>
+      <div class="business-card">
+        <a href="https://305plumbers.com" target="_blank" rel="noopener"><img class="brand-logo" src="logos/305plumbers.svg" alt="305Plumbers" width="182" height="56" decoding="async" /></a>
+        <p>Connects Miami-Dade homeowners with independent, Florida-licensed plumbers.</p>
+        <a class="btn-outline" href="https://305plumbers.com" target="_blank" rel="noopener">Visit 305plumbers.com →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ─── BUSINESS — 305ELECTRICIANS ─── -->
 <section class="business reveal" id="businesses">
   <div class="business-inner">
@@ -1373,6 +1408,7 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="https://leadcove.io" target="_blank" rel="noopener">LeadCove</a></li>
     <li><a href="https://305electricians.com" target="_blank" rel="noopener">305Electricians</a></li>
+    <li><a href="https://305plumbers.com" target="_blank" rel="noopener">305Plumbers</a></li>
   </ul>
   <p class="footer-copy">© 2026 Miami Metro LLC · All rights reserved · <a href="mailto:hello@miamimetro.us" style="color:inherit;text-decoration:underline">hello@miamimetro.us</a></p>
 </footer>
