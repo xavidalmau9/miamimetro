@@ -1,14 +1,18 @@
 # Miami Metro LLC
 
-> Miami Metro LLC is headquartered in Miami, Florida. It builds AI-native marketing systems and operates 305Electricians and 305Plumbers, referral services. Website: https://miamimetro.us/
+> Miami Metro LLC is a Miami-based studio headquartered in Miami, Florida. It builds and runs digital products, including LeadCove, BenefitBoost, AIFeed.run, and Mirapop, and it operates local sites such as 305Electricians, 305Plumbers, and Salty Fresh. Website: https://miamimetro.us/
 
-Miami Metro LLC, 305Electricians and 305Plumbers do not perform electrical or plumbing work. This site does not publish a street address, a founding year, or customer reviews.
+Miami Metro LLC, 305Electricians and 305Plumbers do not perform electrical or plumbing work. This site does not publish a street address, a founding year, or customer reviews. BenefitBoost is not a government site and is not affiliated with USDA or SNAP.
 
-## Businesses
+## Projects
 
+- [LeadCove](https://leadcove.io/): AI prospecting platform for real estate agents, built by Miami Metro LLC.
+- [BenefitBoost](https://getbenefitboost.com/): Free website run by Miami Metro LLC for SNAP households to look up 2026 EBT deposit dates and other programs that may help. Not a government site. It never asks for an EBT card number or PIN.
+- [AIFeed.run](https://aifeed.run/): AI news brand that publishes short, source-linked stories in plain English. Selection and writing are automated with AI systems. Every story points back to its source.
+- [Mirapop](https://mirapop.tv/): Free-with-ads platform for vertical shows on a phone or a bigger screen. Every show is free with ads, or $2.99/month to go ad-free. AI-generated series are labeled. Operated by Miami Metro LLC.
 - [305Electricians](https://305electricians.com/): Referral service operated by Miami Metro LLC. It connects Miami-Dade customers with independent licensed electricians and does not do the electrical work. Phone: (305) 699-4194. Customers can use English or Spanish. Electrician signup: https://305electricians.com/pros/
 - [305Plumbers](https://305plumbers.com/): Referral service operated by Miami Metro LLC. It connects Miami-Dade customers with independent licensed plumbers and does not do the plumbing work. Phone: (305) 699-4194. Email: pros@305plumbers.com. Customers can use English or Spanish. Plumber signup: https://305plumbers.com/pros/
-- [LeadCove](https://leadcove.io/): AI prospecting platform for real estate agents, built by Miami Metro LLC.
+- [Salty Fresh](https://saltyfreshfishing.com/): Miami fishing-charter website for private trips with Capt. Charles, departing Rickenbacker Marina in Key Biscayne and Black Point Marina in Homestead.
 
 ## Contact
 
@@ -17,4 +21,4 @@ Miami Metro LLC, 305Electricians and 305Plumbers do not perform electrical or pl
 
 ## Pages
 
-- [Home](https://miamimetro.us/): Services, 305Electricians, 305Plumbers, LeadCove, questions, and contact.
+- [Home](https://miamimetro.us/): Projects, about, questions, and contact.

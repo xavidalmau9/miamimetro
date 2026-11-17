@@ -97,10 +97,9 @@ miamimetro/
 ├── 7f8cc100dbe26b2eeb9f26a3220e767e.txt  ← IndexNow key file
 ├── CNAME                              ← Custom domain
 ├── favicon.svg / favicon.ico / favicon-192.png
-├── go-advertising-preview.png
 ├── logos/                             ← Official project logos
 │   ├── 305electricians.svg
-│   ├── go-advertising.png
+│   ├── 305plumbers.svg
 │   └── leadcove.svg
 └── README.md                          ← This file
 ```
