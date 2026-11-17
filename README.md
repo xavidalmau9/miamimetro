@@ -100,7 +100,11 @@ miamimetro/
 ├── logos/                             ← Official project logos
 │   ├── 305electricians.svg
 │   ├── 305plumbers.svg
-│   └── leadcove.svg
+│   ├── aifeed.svg
+│   ├── benefitboost.svg
+│   ├── leadcove.svg
+│   ├── mirapop.svg
+│   └── saltyfresh.svg
 └── README.md                          ← This file
 ```
 
